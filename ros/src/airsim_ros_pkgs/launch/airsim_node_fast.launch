@@ -1,0 +1,28 @@
+<launch>
+	<arg name="output" default="screen"/>
+	<arg name="publish_clock" default="false"/>
+	<arg name="is_vulkan" default="true"/>
+	<arg name="host" default="192.168.3.69" />
+
+	<node name="airsim_node_fast" pkg="airsim_ros_pkgs" type="airsim_node_fast" output="$(arg output)">
+		<param name="is_vulkan" type="bool" value="false" /> 
+		<!-- ROS timer rates. Note that timer callback will be processed at maximum possible rate, upperbounded by the following ROS params -->
+		<param name="update_airsim_img_response_every_n_sec" type="double" value="0.01" /> 
+		<param name="update_airsim_control_every_n_sec" type="double" value="0.01" />
+		<param name="update_lidar_every_n_sec" type="double" value="0.01" />
+		<param name="publish_clock" type="bool" value="$(arg publish_clock)" />
+		<param name="host_ip" type="string" value="$(arg host)" />
+		<!-- <remap from="/velocity_cmd" to="/planning/pos_cmd"/> -->
+	</node>
+
+    <!-- <node pkg="airsim_ros_pkgs" type="test_cpp" name="test_cpp" output="screen" >
+    </node> -->
+
+    <!-- <node pkg="airsim_ros_pkgs" type="transfer.py" name="transfer_of_msg_node" output="screen" > -->
+	<!-- </node> -->
+
+	<!-- <include file="$(find airsim_ros_pkgs)/launch/transfer_node.launch" /> -->
+	<!-- Static transforms -->
+	<!-- <include file="$(find airsim_ros_pkgs)/launch/static_transforms_fast.launch"/> -->
+    <!-- <node pkg="airsim_ros_pkgs" type="takeoff.py" name="Takeoff" />    -->
+</launch>

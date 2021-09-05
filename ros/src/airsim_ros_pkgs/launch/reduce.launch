@@ -1,0 +1,5 @@
+<launch>
+  <node name="pcl_node" pkg="airsim_ros_pkgs" type="pointcloud_reduce" output="screen">
+  <param name="leftSize" value="0.1" />
+  </node>
+</launch>

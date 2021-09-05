@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="airsim_ros_pkgs" type="save_pcd" name="save_pcd"
+    output="screen" >
+  </node>
+</launch>

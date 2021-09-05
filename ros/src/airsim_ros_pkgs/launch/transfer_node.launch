@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="airsim_ros_pkgs" type="transfer.py" name="transfer_of_msg_node"
+    output="screen" >
+  </node>
+</launch>

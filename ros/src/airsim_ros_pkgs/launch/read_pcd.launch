@@ -1,0 +1,4 @@
+<launch>
+  <node name="read_pcd" pkg="airsim_ros_pkgs" type="read_pcd" output="screen">
+  </node>
+</launch>

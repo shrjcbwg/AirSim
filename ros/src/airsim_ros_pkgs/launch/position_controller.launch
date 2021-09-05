@@ -1,0 +1,26 @@
+<launch>
+<!-- global params -->
+<!-- PID position controller node -->
+    <node name="position_controller_node" pkg="airsim_ros_pkgs" type="position_controller_node" output="screen">
+        <param name="update_control_every_n_sec" type="double" value="0.01" /> <!-- this needs to be in sync with airsim_ros_wrapper? -->
+        <param name="kp_x" type="double" value="0.50" />
+        <param name="kp_y" type="double" value="0.50" />
+        <param name="kp_z" type="double" value="0.50" />
+        <param name="kp_yaw" type="double" value="0.50" />
+
+        <param name="kd_x" type="double" value="0.15" />
+        <param name="kd_y" type="double" value="0.15" />
+        <param name="kd_z" type="double" value="0.15" />
+        <param name="kd_yaw" type="double" value="0.15" />
+
+        <param name="reached_thresh_xyz" type="double" value="0.1" />
+        <param name="reached_yaw_degrees" type="double" value="5.0" />
+
+        <param name="pub_vel" type="string" value="vel_cmd_" />
+        <param name="cmd_output_filename" type="string" value="/home/rui/Desktop/data/cmd_1.txt"/>
+        <param name="odo_output_filename" type="string" value="/home/rui/Desktop/data/odo_1.txt"/>
+
+        <remap from="position_cmd" to="/planning/pos_cmd"/>
+    </node>
+
+</launch>
