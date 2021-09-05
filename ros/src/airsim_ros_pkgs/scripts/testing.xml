@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+<test id= "01" name="test01">
+   <transformation>transformation7_Add_Obs</transformation>
+   <testcase>testcase01</testcase>
+</test>
+<test id= "02" name="test02">
+   <transformation>transformation7_Add_Obs</transformation>
+   <testcase>testcase02</testcase>
+</test>
+</list>
